@@ -82,6 +82,7 @@ exec(char *path, char **argv)
   uint64 sz1;
   sz = sz + PGSIZE;
   p->brk = sz;
+  sz = sz + (STACKPGS-1) * PGSIZE;
   if((sz1 = uvmalloc(pagetable, sz, sz + PGSIZE, PTE_W)) == 0)
     goto bad;
   sz = sz1;
