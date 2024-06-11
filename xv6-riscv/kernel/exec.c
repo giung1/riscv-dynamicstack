@@ -80,7 +80,7 @@ exec(char *path, char **argv)
   // Use the second as the user stack.
   sz = PGROUNDUP(sz);
   uint64 sz1;
-  sz = sz + PGSIZE;
+  sz = sz + PGSIZE; 
   p->brk = sz;
   sz = sz + (STACKPGS-1) * PGSIZE;
   if((sz1 = uvmalloc(pagetable, sz, sz + PGSIZE, PTE_W)) == 0)

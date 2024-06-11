@@ -71,13 +71,14 @@ usertrap(void)
     printf("usertrap(): page fault\n");
     uint64 addr = r_stval(); //stval has the faulting address
     if (addr >= p->brk && addr < p->sz) {
-      uint64 newaddr = (p->pagetable, addr, addr - PGSIZE, PTE_W | PTE_X | PTE_R | PTE_U);
+      addr = PGROUNDUP(addr);
+      uint64 newaddr = uvmalloc(p->pagetable, addr, addr + PGSIZE, PTE_W);
       if (newaddr == 0) {
         printf("usertrap(): out of memory\n");
         setkilled(p);
       } 
     } else {
-      printf("usertrap(): unexpected scause %p pid=%d\n", r_scause(), p->pid);
+      printf("usertrap(): page fault %p pid=%d\n", r_scause(), p->pid);
       printf("            sepc=%p stval=%p\n", r_sepc(), r_stval());
       setkilled(p);
     }
