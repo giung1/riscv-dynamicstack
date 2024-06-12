@@ -11,4 +11,4 @@
 #define NBUF         (MAXOPBLOCKS*3)  // size of disk block cache
 #define FSSIZE       2000  // size of file system in blocks
 #define MAXPATH      128   // maximum file path name
-#define STACKPGS     10     // number of pages to extend the stack
+#define STACKPGS     3     // number of pages to extend the stack
