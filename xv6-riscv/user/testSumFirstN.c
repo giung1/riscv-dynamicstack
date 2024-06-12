@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
     int n = 400;
     int i= 1;
     long res = SumFirstN(n,i);
-    printf("Result of factorial of %d: %d \n", n, res);
+    printf("Result of sum of the first %d naturals is: %d \n", n, res);
     return 0;
 }
 

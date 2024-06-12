@@ -132,7 +132,7 @@ UPROGS=\
 	$U/_grind\
 	$U/_wc\
 	$U/_zombie\
-	$U/_testFibonacci\
+	$U/_testSumFirstN\
 	$U/_testStackOverflow\
 
 fs.img: mkfs/mkfs README $(UPROGS)
