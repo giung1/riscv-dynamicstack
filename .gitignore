@@ -12,7 +12,7 @@ initcode
 initcode.out
 kernelmemfs
 mkfs
-kernel/kernel
+xv6-riscv/kernel/kernel
 user/usys.S
 .gdbinit
 .vscode/
